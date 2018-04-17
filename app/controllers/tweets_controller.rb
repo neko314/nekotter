@@ -15,7 +15,5 @@ class TweetsController < ApplicationController
     @tweet.content = params[:tweet][:content]
     @tweet.save
     redirect_to '/tweets/index'
-end
-
-
+  end
 end

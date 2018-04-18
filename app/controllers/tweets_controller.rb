@@ -10,7 +10,7 @@ class TweetsController < ApplicationController
   end
 
   def create
-    @tweet = Tweet.create(params[:tweet_params])
+    @tweet = Tweet.create(tweet_params)
     redirect_to '/tweets/index'
   end
 

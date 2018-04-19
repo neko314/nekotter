@@ -3,11 +3,9 @@ class TweetsController < ApplicationController
     @tweets = Tweet.page(params[:page]).per(2)
   end
 
-  def show
-  end
+  def show; end
 
-  def new
-  end
+  def new; end
 
   def create
     @tweet = Tweet.create(tweet_params)
@@ -16,7 +14,7 @@ class TweetsController < ApplicationController
 
   private
 
-    def tweet_params
-      params.require(:tweet).permit(:title, :content)
-    end
+  def tweet_params
+    params.require(:tweet).permit(:title, :content)
+  end
 end

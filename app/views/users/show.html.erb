@@ -1,2 +1,8 @@
 <h1><%= @user[:name] %></h1>
 <p><%= @user[:username] %></p>
+
+<% if @user.provider.nil? %>
+  <%= image_tag @user.avatar.url(:thumb) %>
+<% else %>
+  <%= image_tag @user.avatar_file_name %>
+<% end %>

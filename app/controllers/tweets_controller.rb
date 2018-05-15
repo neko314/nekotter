@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 class TweetsController < ApplicationController
-
   def index
     @tweets = Tweet.page(params[:page]).per(2)
   end

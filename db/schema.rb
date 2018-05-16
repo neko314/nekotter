@@ -12,7 +12,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_03_044925) do
+ActiveRecord::Schema.define(version: 2018_05_16_054037) do
 
   create_table "tweets", force: :cascade do |t|
     t.string "title"
@@ -23,9 +23,6 @@ ActiveRecord::Schema.define(version: 2018_05_03_044925) do
 
   create_table "users", force: :cascade do |t|
     t.string "name"
-    t.string "username"
-    t.string "location"
-    t.text "about"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "email", default: "", null: false

@@ -1,8 +1,16 @@
 <%= render "header" %>
 <%= form_for :tweet, url: tweets_path do |f| %>
-  <%= f.label :title %>
+<p>
+  <%= f.label :title %><br>
   <%= f.text_field :title %>
-  <%= f.label :content %>
-  <%= f.text_area :content %>
-  <%= f.submit %>
+</p>
+
+<p>
+  <%= f.label :content %><br>
+  <%= f.text_field :content %>
+</p>
+
+<p>
+  <%= f.submit  %>
+</p>
 <% end %>

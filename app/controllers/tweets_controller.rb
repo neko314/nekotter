@@ -13,8 +13,9 @@ class TweetsController < ApplicationController
 
   def create
     @tweet = Tweet.new(tweet_params)
+    @tweet.user_id = current_user.id
     if @tweet.save
-      redirect_to "/tweets/index"
+      redirect_to "/tweets"
     else
       redirect_to "/tweets/new"
     end
@@ -23,6 +24,6 @@ class TweetsController < ApplicationController
   private
 
     def tweet_params
-      params.require(:tweet).permit(:title, :content)
+      params.require(:tweet).permit(:title, :content, :user_id)
     end
 end

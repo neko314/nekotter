@@ -1,12 +1,4 @@
 <%= @users.each do |user| %>
   <% user.name %>
-  <% user.location %>
+  <% user.avatar %>
 <% end %>
-
-<%= "[%s]:"%(I18n.locale.to_s) %>
-<%=t :hello %>
-<br />
-<% I18n.locale = :ja %>
-<%= "[%s]:"%(I18n.locale.to_s) %>
-<%=t :hello %>
-<%=t :hello %>

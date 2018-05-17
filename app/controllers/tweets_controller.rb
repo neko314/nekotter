@@ -5,13 +5,19 @@ class TweetsController < ApplicationController
     @tweets = Tweet.page(params[:page]).per(2)
   end
 
-  def show; end
+  def show
+  end
 
-  def new; end
+  def new
+  end
 
   def create
-    @tweet = Tweet.create(tweet_params)
-    redirect_to "/tweets/index"
+    @tweet = Tweet.new(tweet_params)
+    if @tweet.save
+      redirect_to "/tweets/index"
+    else
+      redirect_to "/tweets/new"
+    end
   end
 
   private

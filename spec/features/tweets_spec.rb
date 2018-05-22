@@ -28,17 +28,17 @@ RSpec.feature "Tweets", type: :feature do
       click_link "Edit"
       fill_in "Title", with: "New Title"
       click_button "Submit Tweet"
-      visit tweet_path(tweet)
+      tweet.reload
       expect(tweet.title).to eq "New Title"
     end
 
     # ユーザーはツイートを削除する.
     scenario "user deletes a tweet" do
-    tweet = FactoryBot.create(:tweet)
-    visit "tweets/show"
-    expect{
-      click_link "Destroy"
-    }.to change(@user.tweets, :count).by(-1)
+      tweet = FactoryBot.create(:tweet)
+      visit "tweets/show"
+      expect {
+        click_link "Destroy"
+      }.to change(@user.tweets, :count).by(-1)
     end
   end
 

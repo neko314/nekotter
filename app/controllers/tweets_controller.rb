@@ -33,7 +33,7 @@ class TweetsController < ApplicationController
     if @tweet.update(tweet_params)
       redirect_to @tweet
     else
-      render 'edit'
+      render "edit"
     end
   end
 

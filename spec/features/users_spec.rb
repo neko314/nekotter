@@ -35,5 +35,4 @@ RSpec.feature "Users", type: :feature do
     click_link "Sign in with Twitter"
     expect(page).to have_content "Twitter User"
   end
-
 end

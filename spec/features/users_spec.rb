@@ -5,13 +5,14 @@ require "rails_helper"
 RSpec.feature "Users", type: :feature do
   # 認証なし
   # サインアップする
-  scenario "user signs up" do
+  scenario "user signs up", js: true do
     visit new_user_registration_path
     expect {
       fill_in "Name", with: "testuser"
       fill_in "Eメール", with: "test@example.com"
       fill_in "パスワード", with: "test-password"
       fill_in "パスワード（確認用）", with: "test-password"
+      binding.pry
       click_button "Sign up"
     }.to change(User, :count).by(1)
   end

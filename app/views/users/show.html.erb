@@ -1,9 +1,9 @@
-<h1><%= @user[:name] %></h1>
+<h1><%= current_user[:name] %></h1>
 
-<% if @user.provider.nil? %>
-  <%= image_tag @user.avatar.url(:thumb) %>
+<% if current_user.provider.nil? %>
+  <%= image_tag current_user.avatar.url(:thumb) %>
 <% else %>
-  <%= image_tag @user.avatar_file_name %>
+  <%= image_tag current_user.avatar_file_name(:thumb) %>
 <% end %>
 <br>
 <%= link_to "New Tweet", new_tweet_path %>

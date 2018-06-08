@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class Users::ResistrarionsController < Devise::ResistrationsController
+class Users::RegistrarionsController < Devise::RegistrationsController
   def build_resource(hash = nil)
     hash[:uid] = User.create_unique_string
     super

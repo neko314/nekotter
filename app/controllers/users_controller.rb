@@ -5,10 +5,9 @@ class UsersController < ApplicationController
   end
 
   def show
-    # @user = current_user
-    #  # User.find_by(params[:id])
-    # unless @user
-    #   redirect_to "/users/sign_in"
-    # end
+    @user = User.find_by(params[:id])
+    unless @user
+      redirect_to "/users/sign_in"
+    end
   end
 end

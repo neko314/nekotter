@@ -14,7 +14,7 @@ set :repo_url, "git@github.com:neko314/nekotter.git"
 
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/nekotter"
-
+# set :linked_files, %w{ config/secrets.yml }
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -42,7 +42,7 @@ set :deploy_to, "/home/deploy/nekotter"
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-set :linked_files, %w{ config/secrets.yml }
+
 
 desc "Check that we can access everything"
 task :check_write_permissions do

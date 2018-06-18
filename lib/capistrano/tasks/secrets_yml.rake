@@ -2,8 +2,7 @@ namespace :deploy do
   desc "Upload secrets.yml to the shared/config directory."
   task :secrets_yml do
     unless File.exist?('tmp/secrets.yml')
-      secrets = { fetch(:stage).to_s =>
-        { 'secret_key_base' => SecureRandom.hex(64) } }
+      secrets = { fetch(:stage).to_s => { 'secret_key_base' => SecureRandom.hex(64) } }
       File.open('tmp/secrets.yml', 'w') do |f|
         f.write secrets.to_yaml
       end

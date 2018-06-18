@@ -46,7 +46,7 @@ role :web ,%W{deploy@160.16.109.81:26075}
 # --------------
   set :ssh_options, {
     keys: %w(/Users/keiko/.ssh/client_rsa),
-    # port: 26075,
+    port: 26075,
     # forward_agent: true,
  #    # auth_methods: false,
   }

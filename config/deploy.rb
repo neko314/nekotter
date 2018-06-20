@@ -11,7 +11,6 @@ set :repo_url, "git@github.com:neko314/nekotter.git"
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
-set :ssh_options, :port =>26075
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/nekotter"
 # set :linked_files, %w{ config/secrets.yml }

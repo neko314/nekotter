@@ -1,10 +1,10 @@
 namespace :deploy do
   desc "Upload secrets.yml to the shared/config directory."
   task :secrets_yml do
-    unless File.exist?('tmp/secrets.yml')
+    unless File.exist?('config/secrets.yml')
       secrets = { fetch(:stage).to_s =>
         { 'secret_key_base' => SecureRandom.hex(64) } }
-      File.open('tmp/secrets.yml', 'w') do |f|
+      File.open('secrets.yml', 'w') do |f|
         f.write secrets.to_yaml
       end
     end
@@ -14,7 +14,7 @@ namespace :deploy do
         unless test "[ -d #{shared_path}/config ]"
           execute "/bin/mkdir -p #{shared_path}/config/"
         end
-        upload! "tmp/secrets.yml", "#{shared_path}/config/secrets.yml"
+        upload! "config/secrets.yml", "#{shared_path}/config/secrets.yml"
       end
     end
   end

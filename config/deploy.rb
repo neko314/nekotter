@@ -15,7 +15,7 @@ set :repo_url, "git@github.com:neko314/nekotter.git"
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/nekotter"
 # set :linked_files, %w{ config/secrets.yml }
-
+append :linked_files, 'config/database.yml', 'config/secrets.yml'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 

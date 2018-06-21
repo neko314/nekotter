@@ -3,7 +3,7 @@ lock "~> 3.11.0"
 
 set :application, "nekotter"
 # set :repo_url, "ssh://git@github.com:neko314/nekotter.git"
-set :repo_url, "https://neko314:smile314@github.com/neko314/nekotter.git"
+set :repo_url, "https://neko314:smile314@github.com/nek/nekotter.git"
 # git@github.com:neko314/nekotter.git
 # set :repo_url, 'https://user_name:pass_word@github.com/user_name/web_app.git'
 

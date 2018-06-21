@@ -9,6 +9,7 @@ set :repo_url, "https://neko314:smile314@github.com/nek/nekotter.git"
 
 # set :repo_url, 'ssh://git@example.com:30000/~/me/my_repo.git'
 
+set :assets_roles, [:web, :app]
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

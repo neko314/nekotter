@@ -21,7 +21,7 @@ set :stage, :production
 
 
 role :web ,%W{deploy@160.16.109.81:26075}
- role :app, %w{deploy@160.16.109.81:26075}
+ # role :app, %w{deploy@160.16.109.81:26075}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 

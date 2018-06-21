@@ -6,7 +6,7 @@ require "capistrano/deploy"
 require 'capistrano/rails'
 require 'capistrano/ssh_doctor'
 require 'capistrano/file-permissions'
-require 'capistrano/secrets_yml'
+# require 'capistrano/secrets_yml'
 
 # Load the SCM plugin appropriate to your project:
 #

@@ -5,8 +5,6 @@ require "capistrano/setup"
 require "capistrano/deploy"
 require 'capistrano/rails'
 require 'capistrano/ssh_doctor'
-require 'capistrano/file-permissions'
-# require 'capistrano/secrets_yml'
 
 # Load the SCM plugin appropriate to your project:
 #
@@ -16,8 +14,8 @@ require 'capistrano/file-permissions'
 # require "capistrano/scm/svn"
 # install_plugin Capistrano::SCM::Svn
 # or
-# require "capistrano/scm/git"
-# install_plugin Capistrano::SCM::Git
+require "capistrano/scm/git"
+install_plugin Capistrano::SCM::Git
 
 # Include tasks from other gems included in your Gemfile
 #

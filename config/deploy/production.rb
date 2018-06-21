@@ -6,7 +6,7 @@ set :stage, :production
 # You can define all roles on a single server, or split them:
 
 # server "nekotter.tk", user: "keiko", roles: %w{app db web}, my_property: :my_value
-# server "160.16.109.81", user: "keiko", roles: %w{app db web}, my_property: :my_value
+ # server "160.16.109.81", user: "delploy", roles: %w{app db web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
@@ -20,10 +20,12 @@ set :stage, :production
 # Don't use `:all`, it's a meta role.
 
 
-# cap role :web, %W{deploy@160.16.109.81:26075}
+# server '160.16.109.81', roles: %w{web app}, my_property: :my_value
 
+ role :web, %w{deploy@160.16.109.81:26075}
 
-#  # role :app, %w{deploy@160.16.109.81:26075}
+# role :app, %w{160.16.109.81}
+# role :app, %w{deploy@160.16.109.81:26075}
 # # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # # role :db,  %w{deploy@example.com}
 #
@@ -47,13 +49,13 @@ set :stage, :production
 # #
 # # Global options
 # # --------------
- set :ssh_options, {
-   user: "deploy",
-   keys: %w(/Users/keiko/.ssh/client_rsa),
-   port: 26075,
-  # forward_agent: true,
-  # auth_methods: false,
- }
+set :ssh_options, {
+#  user: "deploy",
+ keys: %w(/Users/keiko/.ssh/client_rsa),
+#  port: 26075,
+# # forward_agent: true,
+# # auth_methods: false,
+}
 #
 # The server-based syntax can be used to override options:
 # server "160.16.109.81",

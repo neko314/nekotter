@@ -32,6 +32,7 @@ set :deploy_to, "/home/deploy/nekotter"
 # Default value for linked_dirs is []
 # append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
+ append :linked_files, 'config/credebtuaks.yml.enc'
 # append :linked_files, 'config/database.yml', 'config/secrets.yml'
 
 # Default value for default_env is {}

@@ -3,13 +3,13 @@ lock "~> 3.11.0"
 
 set :application, "nekotter"
 # set :repo_url, "ssh://git@github.com:neko314/nekotter.git"
-set :repo_url, 'https://neko314:smile314@github.com/nek/nekotter.git'
+set :repo_url, 'https://neko314:smile314@github.com/neko314/nekotter.git'
 # git@github.com:neko314/nekotter.git
 # set :repo_url, 'https://user_name:pass_word@github.com/user_name/web_app.git'
 
 # set :repo_url, 'ssh://git@example.com:30000/~/me/my_repo.git'
 
-# set :assets_roles, [:web, :app]
+set :assets_roles, [:web, :app]
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp

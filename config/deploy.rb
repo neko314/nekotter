@@ -10,6 +10,12 @@ set :repo_url, 'https://neko314:smile314@github.com/neko314/nekotter.git'
 # set :repo_url, 'ssh://git@example.com:30000/~/me/my_repo.git'
 
 set :assets_roles, [:web, :app]
+set :conditionally_migrate, true
+set :migration_role, :db
+set :migration_servers, -> { primary(fetch(:migration_role)) }
+
+# set :migration_role, :app
+
 
 # Default branch is :master
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
@@ -46,7 +52,7 @@ append :linked_files, 'config/database.yml'
 
 # Uncomment the following to require manually verifying the host key before first deploy.
 # set :ssh_options, verify_host_key: :secure
-set :migration_role, :app
+
 
 
 desc "Check that we can access everything"

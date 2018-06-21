@@ -86,6 +86,8 @@ task :secrets_yml do
         execute "/bin/mkdir -p #{shared_path}/config/"
       end
       upload! "tmp/secrets.yml", "#{shared_path}/config/secrets.yml"
+      append :linked_files, 'config/secrets.yml'
+      
     end
   end
 end

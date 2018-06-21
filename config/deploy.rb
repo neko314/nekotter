@@ -16,7 +16,6 @@ set :assets_roles, [:web, :app]
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/nekotter"
 # set :linked_files, %w{ config/secrets.yml }
-append :linked_files, 'config/secrets.yml'
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 

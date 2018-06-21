@@ -10,7 +10,6 @@ set :stage, :production
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
-role :web ,%W{deploy@160.16.109.81:26075}
 
 # role-based syntax
 # ==================
@@ -20,7 +19,9 @@ role :web ,%W{deploy@160.16.109.81:26075}
 # property set. Specify the username and a domain or IP for the server.
 # Don't use `:all`, it's a meta role.
 
-# role :app, %w{deploy@example.com}, my_property: :my_value
+
+role :web ,%W{deploy@160.16.109.81:26075}
+ role :app, %w{deploy@160.16.109.81:26075}
 # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # role :db,  %w{deploy@example.com}
 
@@ -64,22 +65,22 @@ role :web ,%W{deploy@160.16.109.81:26075}
 #   # password: "please use keys"
 # }
 
-# desc "Upload secrets.yml to the shared/config directory."
-# task :secrets_yml do
-#   unless File.exist?('tmp/secrets.yml')
-#     secrets = { fetch(:stage).to_s =>
-#       { 'secret_key_base' => SecureRandom.hex(64) } }
-#     File.open('tmp/secrets.yml', 'w') do |f|
-#       f.write secrets.to_yaml
-#     end
-#   end
-#
-#   on roles(:app) do
-#     unless test "[ -f #{shared_path}/config/secrets.yml ]"
-#       unless test "[ -d #{shared_path}/config ]"
-#         execute "/bin/mkdir -p #{shared_path}/config/"
-#       end
-#       upload! "tmp/secrets.yml", "#{shared_path}/config/secrets.yml"
-#     end
-#   end
-# end
+desc "Upload secrets.yml to the shared/config directory."
+task :secrets_yml do
+  unless File.exist?('tmp/secrets.yml')
+    secrets = { fetch(:stage).to_s =>
+      { 'secret_key_base' => SecureRandom.hex(64) } }
+    File.open('tmp/secrets.yml', 'w') do |f|
+      f.write secrets.to_yaml
+    end
+  end
+
+  on roles(:app) do
+    unless test "[ -f #{shared_path}/config/secrets.yml ]"
+      unless test "[ -d #{shared_path}/config ]"
+        execute "/bin/mkdir -p #{shared_path}/config/"
+      end
+      upload! "tmp/secrets.yml", "#{shared_path}/config/secrets.yml"
+    end
+  end
+end

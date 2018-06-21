@@ -3,7 +3,7 @@ lock "~> 3.11.0"
 
 set :application, "nekotter"
 # set :repo_url, "ssh://git@github.com:neko314/nekotter.git"
- set :repo_url, 'https://neko314:smile314@github.com/neko314/nekotter.git'
+g set :repo_url, 'https://neko314:smile314@github.com/neko314/nekotter.git'
 # set :repo_url, 'git@github.com:neko314/nekotter.git'
 # set :repo_url, 'https://user_name:pass_word@github.com/user_name/web_app.git'
 
@@ -15,7 +15,6 @@ set :assets_roles, [:web, :app]
 # ask :branch, `git rev-parse --abbrev-ref HEAD`.chomp
 # Default deploy_to directory is /var/www/my_app_name
 set :deploy_to, "/home/deploy/nekotter"
-# set :linked_files, %w{ config/secrets.yml }
 # Default value for :format is :airbrussh.
 # set :format, :airbrussh
 
@@ -30,9 +29,8 @@ set :deploy_to, "/home/deploy/nekotter"
 # append :linked_files, "config/database.yml"
 
 # Default value for linked_dirs is []
-append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
+# append :linked_dirs, "log", "tmp/pids", "tmp/cache", "tmp/sockets", "public/system"
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
-# append :linked_files, 'config/credentials.yml.enc'
 append :linked_files, %w{config/master.key}
 
 # Default value for default_env is {}

@@ -20,7 +20,9 @@ set :stage, :production
 # Don't use `:all`, it's a meta role.
 
 
-# role :web ,%W{deploy@160.16.109.81:26075}
+# cap role :web, %W{deploy@160.16.109.81:26075}
+
+
 #  # role :app, %w{deploy@160.16.109.81:26075}
 # # role :web, %w{user1@primary.com user2@additional.com}, other_property: :other_value
 # # role :db,  %w{deploy@example.com}
@@ -45,25 +47,26 @@ set :stage, :production
 # #
 # # Global options
 # # --------------
-#   set :ssh_options, {
-#     keys: %w(/Users/keiko/.ssh/client_rsa),
-#     port: 26075,
-#     # forward_agent: true,
-#  #    # auth_methods: false,
-#   }
-# #
+ set :ssh_options, {
+   user: "deploy",
+   keys: %w(/Users/keiko/.ssh/client_rsa),
+   port: 26075,
+  # forward_agent: true,
+  # auth_methods: false,
+ }
+#
 # The server-based syntax can be used to override options:
-# server "nekotter.tk",
-# user: "keiko",
-# roles: %w{web app},
-# ssh_options: {
-#    user: "keiko", # overrides user setting above
-#   port: 26075,
-#   keys: %w(/home/keiko/.ssh/id_rsa),
-#   forward_agent: false,
-#   # auth_methods: %w(publickey password),
-#   # password: "please use keys"
-# }
+# server "160.16.109.81",
+#  user: "deploy",
+#  roles: %w{web app},
+#  ssh_options: {
+#     user: "deploy",
+#     keys: %w(/Users/keiko/.ssh/client_rsa),
+#     port: 26075
+  # #   forward_agent: false,
+  #   # auth_methods: %w(publickey password),
+     # password: "please use keys"
+   # }
 
 # desc "Upload secrets.yml to the shared/config directory."
 # task :secrets_yml do

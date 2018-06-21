@@ -32,7 +32,7 @@ role :web ,%W{deploy@160.16.109.81:26075}
 # You can set any configuration variable like in config/deploy.rb
 # These variables are then only loaded and set in this stage.
 # For available Capistrano configuration variables see the documentation page.
-# http://capistranorb.com/documentation/getting-started/configuration/
+# http://capistranorb.com/documentation/getting-started/configuration/git
 # Feel free to add new variables to customise your setup.
 
 
@@ -65,22 +65,22 @@ role :web ,%W{deploy@160.16.109.81:26075}
 #   # password: "please use keys"
 # }
 
-desc "Upload secrets.yml to the shared/config directory."
-task :secrets_yml do
-  unless File.exist?('tmp/secrets.yml')
-    secrets = { fetch(:stage).to_s =>
-      { 'secret_key_base' => SecureRandom.hex(64) } }
-    File.open('tmp/secrets.yml', 'w') do |f|
-      f.write secrets.to_yaml
-    end
-  end
-
-  on roles(:app) do
-    unless test "[ -f #{shared_path}/config/secrets.yml ]"
-      unless test "[ -d #{shared_path}/config ]"
-        execute "/bin/mkdir -p #{shared_path}/config/"
-      end
-      upload! "tmp/secrets.yml", "#{shared_path}/config/secrets.yml"
-    end
-  end
-end
+# desc "Upload secrets.yml to the shared/config directory."
+# task :secrets_yml do
+#   unless File.exist?('tmp/secrets.yml')
+#     secrets = { fetch(:stage).to_s =>
+#       { 'secret_key_base' => SecureRandom.hex(64) } }
+#     File.open('tmp/secrets.yml', 'w') do |f|
+#       f.write secrets.to_yaml
+#     end
+#   end
+#
+#   on roles(:app) do
+#     unless test "[ -f #{shared_path}/config/secrets.yml ]"
+#       unless test "[ -d #{shared_path}/config ]"
+#         execute "/bin/mkdir -p #{shared_path}/config/"
+#       end
+#       upload! "tmp/secrets.yml", "#{shared_path}/config/secrets.yml"
+#     end
+#   end
+# end

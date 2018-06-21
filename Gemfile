@@ -63,8 +63,7 @@ group :development do
   gem "capistrano", "~> 3.10", require: false
   gem "capistrano-rails", "~> 1.3", require: false
   gem 'capistrano-ssh-doctor', '~> 1.0'
-  gem 'capistrano-file-permissions'
-  gem 'capistrano-secrets-yml', '~> 1.1.0'
+
 end
 
 group :test do

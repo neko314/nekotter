@@ -33,7 +33,7 @@ set :deploy_to, "/home/deploy/nekotter"
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 # append :linked_files, %w{config/master.key}
 append :linked_files, "config/master.key"
-ppend :linked_files, 'config/database.yml'
+append :linked_files, 'config/database.yml'
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

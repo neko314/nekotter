@@ -1,4 +1,4 @@
-set :stage, :productionrole
+set :stage, :production
 
 # server-based syntax
 # ======================
@@ -22,7 +22,7 @@ set :stage, :productionrole
 
 # server '160.16.109.81', roles: %w{web app}, my_property: :my_value
 
- role :web, %w{deploy@160.16.109.81:26075}
+role :web, %w{deploy@160.16.109.81:26075}
 
 # role :app, %w{160.16.109.81}
 # role :app, %w{deploy@160.16.109.81:26075}

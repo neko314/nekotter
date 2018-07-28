@@ -1,4 +1,3 @@
-<h1>Welcome to Nekotter</h1>
-
-<h2><%= link_to 'Sign in', user_session_path %></h2>
-<h2><%= link_to 'Sign up', new_user_session_path %></h2>
+<h1><%=t :welcome_to_nekotter %></h1>
+<h2><%= link_to t('Sign_in'), user_session_path %></h2>
+<h2><%= link_to t('Sign_up'), new_user_session_path %></h2>

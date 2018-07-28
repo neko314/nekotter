@@ -16,7 +16,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
     if @tweet.save
-      redirect_to "/tweets"
+      redirect_to user_tweets_path(current_user)
     else
       redirect_to "/tweets/new"
     end
@@ -31,7 +31,7 @@ class TweetsController < ApplicationController
     @tweet = Tweet.find(params[:id])
 
     if @tweet.update(tweet_params)
-      redirect_to @tweet
+      redirect_to user_tweet_path(@tweet)
     else
       render "edit"
     end

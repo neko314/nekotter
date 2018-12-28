@@ -7,16 +7,18 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <script type=text/javascript>I18n.defaultLocale = <%= I18n.default_locale %>;
+                                 I18n.locale = <%= I18n.locale %>;</script>
   </head>
 
   <body>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
-      <%= link_to 'TOP', root_path%>
+      <%= link_to t('TOP'), root_path%>
     <% if user_signed_in? %>
       <strong><%= current_user.name %></strong>
-      <%= link_to 'Edit profile', edit_user_registration_path %>
-      <%= link_to 'Sign out', destroy_user_session_path, method: :delete %>
+      <%= link_to t('Edit_profile'), edit_user_registration_path %>
+      <%= link_to t('Sign_out'), destroy_user_session_path, method: :delete %>
     <% end %>
     <%= yield %>
   </body>

@@ -1,5 +1,5 @@
-<h1>Edit</h1>
-<%= form_for :tweet, url: tweet_path, method: :patch do |f| %>
+<h1><%=t :Edit %></h1>
+<%= form_for :tweet, url: user_tweet_path, method: :patch do |f| %>
 
   <p>
     <%= f.label :title %><br>
@@ -12,8 +12,8 @@
   </p>
 
   <p>
-    <%= f.submit  %>
+    <%= f.submit t(:Update_tweet)  %>
   </p>
 <% end %>
 
-<%= link_to "Back", tweets_path %>
+<%= link_to t("Back"), user_tweets_path(current_user) %>

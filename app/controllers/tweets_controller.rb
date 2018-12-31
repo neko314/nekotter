@@ -16,9 +16,9 @@ class TweetsController < ApplicationController
     @tweet = Tweet.new(tweet_params)
     @tweet.user_id = current_user.id
     if @tweet.save
-      redirect_to "/tweets"
+      redirect_to user_tweets_path
     else
-      redirect_to "/tweets/new"
+      render "new"
     end
   end
 

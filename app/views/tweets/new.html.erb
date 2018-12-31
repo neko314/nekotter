@@ -1,16 +1,5 @@
-<%= form_for :tweet, url: tweets_path do |f| %>
-<p>
-  <%= f.label :title %><br>
-  <%= f.text_field :title %>
-</p>
+<h1>New</h1>
 
-<p>
-  <%= f.label :content %><br>
-  <%= f.text_field :content %>
-</p>
+<%= render "form" %>
 
-<p>
-  <%= f.submit  %>
-</p>
-<% end %>
 <%= link_to "Back", user_tweets_path %>

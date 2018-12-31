@@ -1,0 +1,16 @@
+<%= form_for :tweet, url: user_tweets_path, method: :patch do |f| %>
+
+  <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+
+  <p>
+    <%= f.label :content %><br>
+    <%= f.text_field :content %>
+  </p>
+
+  <p>
+    <%= f.submit  %>
+  </p>
+<% end %>

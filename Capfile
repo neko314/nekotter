@@ -1,10 +1,12 @@
+# frozen_string_literal: true
+
 # Load DSL and set up stages
 require "capistrano/setup"
 
 # Include default deployment tasks
 require "capistrano/deploy"
-require 'capistrano/rails'
-require 'capistrano/ssh_doctor'
+require "capistrano/rails"
+require "capistrano/ssh_doctor"
 
 # Load the SCM plugin appropriate to your project:
 #

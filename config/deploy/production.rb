@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 set :stage, :production
 
 # server-based syntax
@@ -5,8 +7,8 @@ set :stage, :production
 # Defines a single server with a list of roles and multiple properties.
 # You can define all roles on a single server, or split them:
 
-# server "nekotter.tk", user: "keiko", roles: %w{app db web}, my_property: :my_value
- # server "160.16.109.81", user: "delploy", roles: %w{app db web}
+ # server "nekotter.tk", user: "keiko", roles: %w{app db web}, my_property: :my_value
+# server "160.16.109.81", user: "delploy", roles: %w{app db web}
 # server "example.com", user: "deploy", roles: %w{app web}, other_property: :other_value
 # server "db.example.com", user: "deploy", roles: %w{db}
 
@@ -49,23 +51,22 @@ role :db,  %w{deploy@160.16.109.81:26075}
 # #
 # # Global options
 # # --------------
-set :ssh_options, {
-#  user: "deploy",
+set :ssh_options, 
+ #  user: "deploy",
  keys: %w(/Users/keiko/.ssh/client_rsa),
-#  port: 26075,
-# # forward_agent: true,
-# # auth_methods: false,
-}
-#
-# The server-based syntax can be used to override options:
-# server "160.16.109.81",
-#  user: "deploy",
-#  roles: %w{web app},
-#  ssh_options: {
-#     user: "deploy",
-#     keys: %w(/Users/keiko/.ssh/client_rsa),
-#     port: 26075
-  # #   forward_agent: false,
-  #   # auth_methods: %w(publickey password),
-     # password: "please use keys"
-   # }
+  #  port: 26075,
+  # # forward_agent: true,
+  # # auth_methods: false,
+  #
+  # The server-based syntax can be used to override options:
+  # server "160.16.109.81",
+  #  user: "deploy",
+  #  roles: %w{web app},
+  #  ssh_options: {
+  #     user: "deploy",
+  #     keys: %w(/Users/keiko/.ssh/client_rsa),
+  #     port: 26075
+     # #   forward_agent: false,
+     #   # auth_methods: %w(publickey password),
+   # password: "please use keys"
+# }

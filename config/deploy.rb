@@ -1,9 +1,11 @@
+# frozen_string_literal: true
+
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.11.0"
 
 set :application, "nekotter"
 # set :repo_url, "ssh://git@github.com:neko314/nekotter.git"
-set :repo_url, 'https://neko314:smile314@github.com/neko314/nekotter.git'
+set :repo_url, "https://neko314:smile314@github.com/neko314/nekotter.git"
 # set :repo_url, 'git@github.com:neko314/nekotter.git'
 # set :repo_url, 'https://user_name:pass_word@github.com/user_name/web_app.git'
 
@@ -39,7 +41,7 @@ set :deploy_to, "/home/deploy/nekotter"
 # append :linked_dirs, 'log', 'tmp/pids', 'tmp/cache', 'tmp/sockets', 'vendor/bundle', '.bundle', 'public/system', 'public/uploads'
 # append :linked_files, %w{config/master.key}
 append :linked_files, "config/master.key"
-append :linked_files, 'config/database.yml'
+append :linked_files, "config/database.yml"
 
 # Default value for default_env is {}
 # set :default_env, { path: "/opt/ruby/bin:$PATH" }

@@ -1,10 +1,10 @@
-<h2><%= link_to "New Tweet", new_user_tweet_path %></h2>
+<h2><%= link_to t(".new_tweet"), new_user_tweet_path %></h2>
 <% @tweets.each do |tweet| %>
   <p><%= tweet.title %></p>
   <p><%= tweet.content %></p>
-  <%= link_to "Show", user_tweet_path(current_user, tweet)%>
-  <%= link_to "Edit", edit_user_tweet_path(current_user, tweet) %>
-  <%= link_to 'Destroy', user_tweet_path(current_user, tweet),
-                      method: :delete, data: { confirm: 'Are you sure?' } %>
+  <%= link_to t(".show"), user_tweet_path(current_user, tweet)%>
+  <%= link_to t(".edit"), edit_user_tweet_path(current_user, tweet) %>
+  <%= link_to t(".destroy"), user_tweet_path(current_user, tweet),
+                      method: :delete, data: { confirm: t("are_you_sure?") } %>
 <% end %>
 <%= paginate @tweets %>
